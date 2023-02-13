@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Omphyrog/To-Do-List-App#readme",
   "devDependencies": {
+    "css-loader": "^6.7.3",
+    "font-awesome": "^4.7.0",
+    "style-loader": "^3.3.1",
     "webpack-cli": "^5.0.1"
   }
 }
