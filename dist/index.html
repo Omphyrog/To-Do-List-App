@@ -9,7 +9,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="style.css" />
-    <title>TODO</title>
+    <title>TO-DO</title>
   </head>
   <body>
     <header>
@@ -32,5 +32,29 @@
     <main>
       <button><i class="fa-solid fa-plus"></i> Add Task</button>
     </main>
+
+    <section class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Create new...</h1>
+        </div>
+        <div class="modal-navbar">
+          <button class="hvr-bubble-bottom">Task</button>
+          <button class="hvr-bubble-bottom">Project</button>
+        </div>
+        <div class="modal-body">
+          <div class="hvr-underline-reveal">
+            <input
+              type="text"
+              id="text"
+              name="text"
+              placeholder="Write something.."
+            />
+          </div>
+          <input type="date" id="date" class="hvr-underline-from-center" />
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
