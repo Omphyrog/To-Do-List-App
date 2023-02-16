@@ -1,35 +1,63 @@
-const inboxButton = document.getElementById("inbox");
-const todayButton = document.getElementById("today");
-const weekButton = document.getElementById("week");
-const section = document.querySelector(".section");
+const addTask = document.getElementById("addtask-btn");
+const modal = document.querySelector(".modal");
+const submit = document.getElementById("submit");
+const text = document.getElementById("text");
+const taskField = document.getElementById("task-field");
+const date = document.getElementById("date");
+const body = document.getElementsByTagName("body");
 
-function loadInbox() {
-  const header = createHeader("Inbox");
-  const button = createAddButton();
-  const div = document.createElement("div");
-  const input = document.createElement("input");
+submit.addEventListener("click", function () {
+  displayNewTask();
+  modal.style.display = "none";
+});
 
-  input.classList.add("input");
+addTask.addEventListener("click", function () {
+  modal.style.display = "block";
+});
 
-  section.appendChild(header);
-  section.appendChild(button);
+function createTodo(text, dueDate) {
+  return { text, dueDate };
 }
 
-function createAddButton() {
-  const addButton = document.createElement("button");
+function createTaskField(taskField, addTask) {
+  taskField = document.createElement("main");
+  addTask = document.createElement("button");
 
-  addButton.className = "btn add-btn";
-  addButton.id = "section-button";
-  addButton.innerHTML = "<i class='fa-sharp fa-solid fa-plus'></i> Add task";
+  taskField.id = "task-field";
+  addTask.id = "addtask-btn";
 
-  return addButton;
+  return { taskField, addTask };
 }
 
-function createHeader(text) {
-  const header = document.createElement("h1");
-  header.id = "section-header";
-  header.textContent = text;
-  return header;
-}
+function displayNewTask() {
+  const mainDiv = document.createElement("div");
+  const leftDiv = document.createElement("div");
+  const rightDiv = document.createElement("div");
+  const taskText = document.createElement("p");
+  const dueDate = document.createElement("input");
+  const checkbox = document.createElement("input");
 
-loadInbox();
+  let newTodo = createTodo(text.value, date.value);
+
+  taskText.textContent = newTodo.text;
+  dueDate.type = "date";
+  dueDate.value = date.value;
+  checkbox.type = "checkbox";
+  checkbox.className = "checkbox";
+  mainDiv.className = "task";
+  leftDiv.className = "left";
+  rightDiv.className = "right";
+
+  checkbox.addEventListener("click", () => mainDiv.remove());
+
+  taskField.appendChild(mainDiv);
+  mainDiv.appendChild(leftDiv);
+  mainDiv.appendChild(rightDiv);
+  leftDiv.appendChild(checkbox);
+  leftDiv.appendChild(taskText);
+  rightDiv.appendChild(dueDate);
+
+  date.value = "";
+  text.value = "";
+  console.log(newTodo);
+}

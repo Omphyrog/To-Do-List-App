@@ -19,10 +19,6 @@ body {
   height: 100vh;
 }
 
-body.modal {
-  filter: blur(5px);
-}
-
 header {
   font-family: "Nunito", sans-serif;
   margin: 1rem auto 0 auto;
@@ -63,11 +59,53 @@ main {
   display: flex;
   position: relative;
   flex-direction: column;
+  align-items: center;
   width: 50%;
   margin: 1rem auto 0 auto;
   background-color: white;
   min-height: 60vh;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  border: none;
+  border-bottom: 2px solid #6200ee;
+  padding: 10px;
+  margin-top: 10px;
+  color: #651fff;
+}
+
+.task .left {
+  display: flex;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  margin-right: 20px;
+  border: 2px solid #6200ee;
+  border-radius: 10px;
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: #999;
+}
+
+input[type="date"] {
+  border: none;
+  outline: none;
+  color: #6200ee;
+  font-size: large;
 }
 
 main > button {
@@ -94,6 +132,7 @@ main > button:hover {
 }
 
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -102,7 +141,6 @@ main > button:hover {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   backdrop-filter: blur(5px);
-  /* display: none; */
 }
 
 .modal-content {
@@ -168,9 +206,7 @@ main > button:hover {
   width: 50%;
   padding: 10px;
   margin-top: 1rem;
-  /* border-radius: 5px; */
   border: none;
-  /* border-bottom: 5px solid #6200ee; */
   outline: none;
 }
 
