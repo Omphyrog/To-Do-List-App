@@ -16,7 +16,6 @@ html {
 body {
   font-family: "Roboto Slab", serif;
   background-color: #e0e0e0;
-  height: 100vh;
 }
 
 header {
@@ -63,8 +62,31 @@ main {
   width: 50%;
   margin: 1rem auto 0 auto;
   background-color: white;
-  min-height: 60vh;
+  min-height: 500px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+main > button {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: -20px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 30%;
+  padding: 15px;
+  background-color: #6200ee;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 2rem;
+}
+
+main > button:hover {
+  background-color: #651fff;
+  cursor: pointer;
 }
 
 .task {
@@ -108,29 +130,6 @@ input[type="date"] {
   font-size: large;
 }
 
-main > button {
-  display: flex;
-  justify-content: space-evenly;
-  position: absolute;
-  bottom: -20px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 30%;
-  padding: 15px;
-  background-color: #6200ee;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 900;
-  border: none;
-  border-radius: 2rem;
-}
-
-main > button:hover {
-  background-color: #651fff;
-  cursor: pointer;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -148,9 +147,8 @@ main > button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 60%;
-  width: 80%;
-  max-width: 600px;
+  height: 70%;
+  width: 50%;
   background-color: #fff;
   border-radius: 5px;
 }
@@ -188,7 +186,6 @@ main > button:hover {
 .modal-body {
   display: flex;
   flex-direction: column;
-  /* justify-content: end; */
   align-items: center;
   height: 70%;
 }
@@ -196,8 +193,8 @@ main > button:hover {
 .modal-body input[type="text"] {
   margin: 2rem auto 0.3rem auto;
   padding: 0.5rem;
-  width: 70%;
-  font-size: 2rem;
+  width: 700px;
+  font-size: 1.5rem;
   border: none;
   outline: none;
 }
