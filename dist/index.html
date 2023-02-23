@@ -16,6 +16,7 @@
     <header>
       <h1><i class="fa-sharp fa-solid fa-check-double"></i> To-Do List</h1>
     </header>
+
     <nav>
       <button class="hvr-underline-from-center">
         <i class="fa-sharp fa-solid fa-inbox"></i> Inbox
@@ -30,6 +31,7 @@
         <i class="fa-sharp fa-solid fa-list-check"></i> Projects
       </button>
     </nav>
+
     <main id="task-field">
       <button id="addtask-btn">
         <i class="fa-solid fa-plus"></i> Add Task
@@ -49,12 +51,30 @@
           <div class="hvr-underline-reveal">
             <input
               type="text"
-              id="text"
-              name="text"
-              placeholder="Write something.."
+              id="title"
+              name="title"
+              placeholder="Title: Buy groceries"
             />
           </div>
+          <div class="hvr-underline-reveal">
+            <input
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Description: e.g eggs, milk, bread.."
+            />
+          </div>
+
           <input type="date" id="date" class="hvr-underline-from-center" />
+
+          <div class="priority">
+            <button id="btn-low-priority" class="priority-btn">Low</button>
+            <button id="btn-medium-priority" class="priority-btn">
+              Medium
+            </button>
+            <button id="btn-high-priority" class="priority-btn">High</button>
+          </div>
+
           <button type="submit" id="submit">Submit</button>
         </div>
       </div>
