@@ -1,63 +1,45 @@
-const addTask = document.getElementById("addtask-btn");
-const modal = document.querySelector(".modal");
-const submit = document.getElementById("submit");
-const text = document.getElementById("text");
-const taskField = document.getElementById("task-field");
-const date = document.getElementById("date");
-const body = document.getElementsByTagName("body");
+import Project from "./project";
+import Todo from "./todo";
 
-submit.addEventListener("click", function () {
-  displayNewTask();
-  modal.style.display = "none";
-});
+const TodoApp = {
+  projects: [],
+  defaultProject: null,
 
-addTask.addEventListener("click", function () {
-  modal.style.display = "block";
-});
+  init() {
+    // Create a default project to which all todos will be added
+    this.defaultProject = new Project("Inbox");
+    this.projects.push(this.defaultProject);
+  },
 
-function createTodo(text, dueDate) {
-  return { text, dueDate };
-}
+  addProject(name) {
+    const project = new Project(name);
+    this.projects.push(project);
+    return project;
+  },
 
-function createTaskField(taskField, addTask) {
-  taskField = document.createElement("main");
-  addTask = document.createElement("button");
+  removeProject(project) {
+    const index = this.projects.indexOf(project);
+    if (index !== -1) {
+      this.projects.splice(index, 1);
+    }
+  },
 
-  taskField.id = "task-field";
-  addTask.id = "addtask-btn";
+  addTodoToProject(todo, project = null) {
+    if (project) {
+      project.addTodo(todo);
+    } else {
+      this.defaultProject.addTodo(todo);
+    }
+  },
+};
 
-  return { taskField, addTask };
-}
+TodoApp.init();
 
-function displayNewTask() {
-  const mainDiv = document.createElement("div");
-  const leftDiv = document.createElement("div");
-  const rightDiv = document.createElement("div");
-  const taskText = document.createElement("p");
-  const dueDate = document.createElement("input");
-  const checkbox = document.createElement("input");
+const newTodo = new Todo("hehe", "696969", "high");
+const anotherTodo = new Todo("not hehe", "21942", "low");
+const newProject = TodoApp.addProject("not hehe");
 
-  let newTodo = createTodo(text.value, date.value);
+TodoApp.addTodoToProject(newTodo, newProject);
+TodoApp.addTodoToProject(anotherTodo);
 
-  taskText.textContent = newTodo.text;
-  dueDate.type = "date";
-  dueDate.value = date.value;
-  checkbox.type = "checkbox";
-  checkbox.className = "checkbox";
-  mainDiv.className = "task";
-  leftDiv.className = "left";
-  rightDiv.className = "right";
-
-  checkbox.addEventListener("click", () => mainDiv.remove());
-
-  taskField.appendChild(mainDiv);
-  mainDiv.appendChild(leftDiv);
-  mainDiv.appendChild(rightDiv);
-  leftDiv.appendChild(checkbox);
-  leftDiv.appendChild(taskText);
-  rightDiv.appendChild(dueDate);
-
-  date.value = "";
-  text.value = "";
-  console.log(newTodo);
-}
+console.log(TodoApp.projects);

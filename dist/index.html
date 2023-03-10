@@ -18,17 +18,20 @@
     </header>
 
     <nav>
-      <button class="hvr-underline-from-center">
+      <button class="hvr-underline-from-center" id="inbox">
         <i class="fa-sharp fa-solid fa-inbox"></i> Inbox
       </button>
-      <button class="hvr-underline-from-center">
+      <button class="hvr-underline-from-center" id="today">
         <i class="fa-sharp fa-solid fa-calendar-day"></i> Today
       </button>
-      <button class="hvr-underline-from-center">
+      <button class="hvr-underline-from-center" id="week">
         <i class="fa-sharp fa-solid fa-calendar-week"></i> Week
       </button>
-      <button class="hvr-underline-from-center">
-        <i class="fa-sharp fa-solid fa-list-check"></i> Projects
+      <button class="hvr-underline-from-center" id="projects">
+        <i class="fa-solid fa-folder"></i> Projects
+      </button>
+      <button class="hvr-underline-from-center" id="completed">
+        <i class="fa-solid fa-list-check"></i> Completed
       </button>
     </nav>
 
@@ -37,6 +40,28 @@
         <i class="fa-solid fa-plus"></i> Add Task
       </button>
     </main>
+
+    <div class="edit-modal">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="hvr-underline-reveal">
+            <input
+              type="text"
+              id="text-edit"
+              name="text"
+              placeholder="Write something.."
+            />
+          </div>
+          <input type="date" id="date-edit" class="hvr-underline-from-center" />
+          <div class="priority">
+            <button class="priority-btn btn-low-priority">Low</button>
+            <button class="priority-btn btn-medium-priority">Medium</button>
+            <button class="priority-btn btn-high-priority">High</button>
+          </div>
+          <button type="submit" id="submit-edit">Submit</button>
+        </div>
+      </div>
+    </div>
 
     <section class="modal">
       <div class="modal-content">
@@ -51,17 +76,9 @@
           <div class="hvr-underline-reveal">
             <input
               type="text"
-              id="title"
-              name="title"
-              placeholder="Title: Buy groceries"
-            />
-          </div>
-          <div class="hvr-underline-reveal">
-            <input
-              type="text"
-              id="description"
-              name="description"
-              placeholder="Description: e.g eggs, milk, bread.."
+              id="text"
+              name="text"
+              placeholder="Write something.."
             />
           </div>
 
