@@ -1,14 +1,16 @@
 import Project from "./project";
-import Todo from "./todo";
+import renderPage from "./ui";
 
-const TodoApp = {
+export const TodoApp = {
   projects: [],
-  defaultProject: null,
+  todayProject: null,
+  weekProject: null,
 
   init() {
-    // Create a default project to which all todos will be added
-    this.defaultProject = new Project("Inbox");
-    this.projects.push(this.defaultProject);
+    this.todayProject = new Project("Today");
+    this.weekProject = new Project("Week");
+    this.projects.push(this.todayProject);
+    this.projects.push(this.weekProject);
   },
 
   addProject(name) {
@@ -24,7 +26,8 @@ const TodoApp = {
     }
   },
 
-  addTodoToProject(todo, project = null) {
+  addTodoToProject(todo, projectName) {
+    const project = this.projects.find((p) => p.name === projectName);
     if (project) {
       project.addTodo(todo);
     } else {
@@ -35,11 +38,4 @@ const TodoApp = {
 
 TodoApp.init();
 
-const newTodo = new Todo("hehe", "696969", "high");
-const anotherTodo = new Todo("not hehe", "21942", "low");
-const newProject = TodoApp.addProject("not hehe");
-
-TodoApp.addTodoToProject(newTodo, newProject);
-TodoApp.addTodoToProject(anotherTodo);
-
-console.log(TodoApp.projects);
+renderPage();

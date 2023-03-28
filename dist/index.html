@@ -18,33 +18,70 @@
     </header>
 
     <nav>
-      <button class="hvr-underline-from-center" id="inbox">
+      <button
+        class="hover-effect nav-btn"
+        id="inbox-btn"
+        data-tab="inbox active"
+      >
         <i class="fa-sharp fa-solid fa-inbox"></i> Inbox
       </button>
-      <button class="hvr-underline-from-center" id="today">
+      <button class="hover-effect nav-btn" id="today-btn" data-tab="today">
         <i class="fa-sharp fa-solid fa-calendar-day"></i> Today
       </button>
-      <button class="hvr-underline-from-center" id="week">
+      <button class="hover-effect nav-btn" id="week-btn" data-tab="week">
         <i class="fa-sharp fa-solid fa-calendar-week"></i> Week
       </button>
-      <button class="hvr-underline-from-center" id="projects">
+      <button
+        class="hover-effect nav-btn"
+        id="projects-btn"
+        data-tab="projects"
+      >
         <i class="fa-solid fa-folder"></i> Projects
-      </button>
-      <button class="hvr-underline-from-center" id="completed">
-        <i class="fa-solid fa-list-check"></i> Completed
       </button>
     </nav>
 
-    <main id="task-field">
-      <button id="addtask-btn">
-        <i class="fa-solid fa-plus"></i> Add Task
-      </button>
-    </main>
+    <button id="add-btn">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+
+    <main id="task-field"></main>
+
+    <section class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>Create new...</h1>
+        </div>
+        <div class="modal-navbar">
+          <button class="bubble-bottom">Task</button>
+          <button class="bubble-bottom">Project</button>
+        </div>
+        <div class="modal-body">
+          <div class="underline-effect">
+            <input
+              type="text"
+              id="text"
+              name="text"
+              placeholder="Write something.."
+              required
+            />
+          </div>
+          <input type="date" id="date" class="hover-effect" required />
+          <div class="priority">
+            <button id="btn-low-priority" class="priority-btn">Low</button>
+            <button id="btn-medium-priority" class="priority-btn">
+              Medium
+            </button>
+            <button id="btn-high-priority" class="priority-btn">High</button>
+          </div>
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </div>
+    </section>
 
     <div class="edit-modal">
       <div class="modal-content">
         <div class="modal-body">
-          <div class="hvr-underline-reveal">
+          <div class="underline-effect">
             <input
               type="text"
               id="text-edit"
@@ -52,7 +89,7 @@
               placeholder="Write something.."
             />
           </div>
-          <input type="date" id="date-edit" class="hvr-underline-from-center" />
+          <input type="date" id="date-edit" class="hover-effect" />
           <div class="priority">
             <button class="priority-btn btn-low-priority">Low</button>
             <button class="priority-btn btn-medium-priority">Medium</button>
@@ -62,39 +99,5 @@
         </div>
       </div>
     </div>
-
-    <section class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1>Create new...</h1>
-        </div>
-        <div class="modal-navbar">
-          <button class="hvr-bubble-bottom">Task</button>
-          <button class="hvr-bubble-bottom">Project</button>
-        </div>
-        <div class="modal-body">
-          <div class="hvr-underline-reveal">
-            <input
-              type="text"
-              id="text"
-              name="text"
-              placeholder="Write something.."
-            />
-          </div>
-
-          <input type="date" id="date" class="hvr-underline-from-center" />
-
-          <div class="priority">
-            <button id="btn-low-priority" class="priority-btn">Low</button>
-            <button id="btn-medium-priority" class="priority-btn">
-              Medium
-            </button>
-            <button id="btn-high-priority" class="priority-btn">High</button>
-          </div>
-
-          <button type="submit" id="submit">Submit</button>
-        </div>
-      </div>
-    </section>
   </body>
 </html>

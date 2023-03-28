@@ -1,18 +1,14 @@
 export default class Todo {
-  constructor(text, dueDate = null, priority) {
-    this.text = text;
-    this.dueDate = dueDate;
+  constructor(name, dueDate = null, priority) {
+    this.name = name;
+    this.dueDate = new Date(dueDate).toLocaleDateString("en-GB");
     this.priority = priority;
     this.isCompleted = false;
   }
 
-  edit(text, dueDate, priority) {
-    this.text = text;
-    this.dueDate = dueDate;
+  edit(name, dueDate, priority) {
+    this.name = name;
+    this.dueDate = new Date(dueDate);
     this.priority = priority;
-  }
-
-  markComplete() {
-    this.isCompleted = true;
   }
 }
