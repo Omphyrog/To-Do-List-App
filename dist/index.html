@@ -4,98 +4,112 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/89d1718713.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="main.js" defer></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>TO-DO</title>
+    <script src="bundle.js" defer></script>
+    <title>Todo-App</title>
   </head>
+
   <body>
-    <header>
-      <h1><i class="fa-sharp fa-solid fa-check-double"></i> To-Do List</h1>
-    </header>
+    <h1 class="text-4xl text-blue-700">My Webpack + Tailwind App</h1>
+    <div class="container">
+      <nav class="navbar">
+        <div class="nav-menu">Inbox</div>
+        <div class="nav-menu">Today</div>
+        <div class="nav-menu">Upcoming</div>
+        <div class="nav-menu" id="projects-menu">Projects</div>
 
-    <nav>
-      <button
-        class="hover-effect nav-btn"
-        id="inbox-btn"
-        data-tab="inbox active"
-      >
-        <i class="fa-sharp fa-solid fa-inbox"></i> Inbox
-      </button>
-      <button class="hover-effect nav-btn" id="today-btn" data-tab="today">
-        <i class="fa-sharp fa-solid fa-calendar-day"></i> Today
-      </button>
-      <button class="hover-effect nav-btn" id="week-btn" data-tab="week">
-        <i class="fa-sharp fa-solid fa-calendar-week"></i> Week
-      </button>
-      <button
-        class="hover-effect nav-btn"
-        id="projects-btn"
-        data-tab="projects"
-      >
-        <i class="fa-solid fa-folder"></i> Projects
-      </button>
-    </nav>
-
-    <button id="add-btn">
-      <i class="fa-solid fa-plus"></i>
-    </button>
-
-    <main id="task-field"></main>
-
-    <section class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1>Create new...</h1>
+        <div class="projects-list">
+          <ul>
+            <li>
+              Sample text Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Eos perferendis, quis molestias libero quaerat aut officia
+              ratione eveniet possimus exercitationem numquam nostrum repellat
+              perspiciatis quisquam! Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Pariatur eveniet exercitationem nesciunt
+              corrupti illum, modi culpa et, obcaecati quod dicta, laborum
+              assumenda ex?
+            </li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+            <li>Sample text</li>
+          </ul>
         </div>
-        <div class="modal-navbar">
-          <button class="bubble-bottom">Task</button>
-          <button class="bubble-bottom">Project</button>
-        </div>
-        <div class="modal-body">
-          <div class="underline-effect">
-            <input
-              type="text"
-              id="text"
-              name="text"
-              placeholder="Write something.."
-              required
-            />
-          </div>
-          <input type="date" id="date" class="hover-effect" required />
-          <div class="priority">
-            <button id="btn-low-priority" class="priority-btn">Low</button>
-            <button id="btn-medium-priority" class="priority-btn">
-              Medium
-            </button>
-            <button id="btn-high-priority" class="priority-btn">High</button>
-          </div>
-          <button type="submit" id="submit">Submit</button>
-        </div>
-      </div>
-    </section>
+      </nav>
 
-    <div class="edit-modal">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="underline-effect">
-            <input
-              type="text"
-              id="text-edit"
-              name="text"
-              placeholder="Write something.."
-            />
+      <main class="main">
+        <div class="todo">
+          <div class="todo-left">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p>
+              New todo Lorem ipsum dolor sit amet, consectetur adipisicing Lorem
+              ipsum dolor sit, amet consectetur adipisicing elit. Eligendi
+              fugiat architecto laboriosam quos sint! Itaque voluptatem, ab
+              cumque accusamus consectetur qui a commodi beatae! Vero.
+            </p>
           </div>
-          <input type="date" id="date-edit" class="hover-effect" />
-          <div class="priority">
-            <button class="priority-btn btn-low-priority">Low</button>
-            <button class="priority-btn btn-medium-priority">Medium</button>
-            <button class="priority-btn btn-high-priority">High</button>
+          <div class="todo-right">
+            <input type="date" />
+            <button>X</button>
           </div>
-          <button type="submit" id="submit-edit">Submit</button>
+        </div>
+
+        <div class="todo">
+          <div class="todo-left">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p>
+              New todo Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+              molestiae tenetur. Architecto sequi recusandae saepe incidunt hic
+              nihil illum dolorum illo quos ipsum eligendi dignissimos cum, odit
+              veniam possimus, facere quae magnam tenetur porro fuga vitae nisi.
+              Eius, esse dicta.
+            </p>
+          </div>
+          <div class="todo-right">
+            <input type="date" />
+            <button>X</button>
+          </div>
+        </div>
+
+        <div class="todo">
+          <div class="todo-left">
+            <label class="custom-checkbox">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p>
+              New todo Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="todo-right">
+            <input type="date" />
+            <button>X</button>
+          </div>
+        </div>
+      </main>
+
+      <div class="main-btns" id="add-project-btn">+ New Project</div>
+      <div class="main-btns" id="add-todo-btn">+ New Todo</div>
+
+      <div id="new-project-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <input type="text" id="textInput" class="text-input" />
+          <button id="submitBtn">Submit</button>
         </div>
       </div>
     </div>
