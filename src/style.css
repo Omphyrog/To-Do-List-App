@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .hidden {
+    @apply overflow-hidden opacity-0 max-h-0;
+  }
+
+  .open {
+    @apply flex flex-col items-center opacity-100 overflow-auto max-h-[600px];
+  }
+
+  .active {
+    @apply text-violet-600 font-bold;
+  }
+}
