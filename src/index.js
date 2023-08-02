@@ -24,11 +24,20 @@ inboxBtn.addEventListener("click", () => {
   allProjects.forEach((project) => {
     project.classList.remove("active");
   });
-  const todos = todoApp.getAllTodos();
-  todos.forEach(function (todo) {
-    const todoName = todo.getName();
-    const todoDate = todo.formatDate();
-    main.appendChild(createTodo(todoName, todoDate));
+  // const todos = todoApp.getAllTodos();
+  // todos.forEach(function (todo) {
+  //   const todoName = todo.getName();
+  //   const todoDate = todo.formatDate();
+  //   main.appendChild(createTodo(todoName, todoDate));
+  // });
+  const projects = todoApp.getAllProjects();
+  projects.forEach((project) => {
+    const todos = project.getTodos();
+    todos.forEach((todo) => {
+      const todoName = todo.getName();
+      const todoDate = todo.formatDate();
+      main.appendChild(createTodo(todoName, todoDate));
+    });
   });
   main.appendChild(createTodoBtn());
 });
@@ -208,11 +217,20 @@ function renderPage() {
   main.innerHTML = "";
   const activeProject = document.querySelector(".active");
   if (!activeProject) {
-    const todos = todoApp.getAllTodos();
-    todos.forEach(function (todo) {
-      const todoName = todo.getName();
-      const todoDate = todo.formatDate();
-      main.appendChild(createTodo(todoName, todoDate));
+    // const todos = todoApp.getAllTodos();
+    // todos.forEach(function (todo) {
+    //   const todoName = todo.getName();
+    //   const todoDate = todo.formatDate();
+    //   main.appendChild(createTodo(todoName, todoDate));
+    // });
+    const projects = todoApp.getAllProjects();
+    projects.forEach((project) => {
+      const todos = project.getTodos();
+      todos.forEach((todo) => {
+        const todoName = todo.getName();
+        const todoDate = todo.formatDate();
+        main.appendChild(createTodo(todoName, todoDate));
+      });
     });
   } else {
     const project = todoApp.getProject(activeProject.textContent);
