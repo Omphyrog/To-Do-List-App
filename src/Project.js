@@ -21,6 +21,10 @@ export default class Project {
     this.todos.splice(this.todos.indexOf(todoToRemove), 1);
   }
 
+  setTodos(todos) {
+    this.todos = todos;
+  }
+
   getTodos() {
     return this.todos;
   }

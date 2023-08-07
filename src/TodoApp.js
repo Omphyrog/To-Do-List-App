@@ -33,15 +33,11 @@ export default class TodoApp {
     }
   }
 
-  // getAllTodos() {
-  //   const allTodos = [];
-  //   for (const project of this.projects) {
-  //     allTodos.push(...project.todos);
-  //   }
-  //   return allTodos;
-  // }
+  setProjects(projects) {
+    this.projects = projects;
+  }
 
-  getAllProjects() {
+  getProjects() {
     return this.projects;
   }
 }
