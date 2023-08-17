@@ -1,5 +1,3 @@
-import isValid from "date-fns/isValid";
-
 export default class Todo {
   constructor(name, dueDate) {
     this.name = name;
@@ -12,10 +10,6 @@ export default class Todo {
 
   getDate() {
     return this.dueDate;
-  }
-
-  isValidDate() {
-    return isValid(this.dueDate);
   }
 
   getFormattedDate() {
