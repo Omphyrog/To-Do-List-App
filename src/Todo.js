@@ -3,7 +3,7 @@ import isValid from "date-fns/isValid";
 export default class Todo {
   constructor(name, dueDate) {
     this.name = name;
-    this.dueDate = new Date(dueDate);
+    this.dueDate = dueDate;
   }
 
   getName() {
@@ -14,16 +14,16 @@ export default class Todo {
     return this.dueDate;
   }
 
-  formatDate() {
-    if (!isValid(this.dueDate)) {
-      return "";
-    }
+  isValidDate() {
+    return isValid(this.dueDate);
+  }
 
-    const date = this.dueDate;
+  getFormattedDate() {
+    const formattedDate = new Date(this.dueDate);
 
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = date.getFullYear();
+    const day = String(formattedDate.getDate()).padStart(2, "0");
+    const month = String(formattedDate.getMonth() + 1).padStart(2, "0");
+    const year = formattedDate.getFullYear();
 
     return `${day}/${month}/${year}`;
   }

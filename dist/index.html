@@ -23,19 +23,19 @@
         >
           <div
             class="font-bold text-violet-500 text-xl hover:cursor-pointer hover:text-violet-300"
-            id="inboxBtn"
+            id="inbox-btn"
           >
             Inbox
           </div>
           <div
             class="font-bold text-violet-500 text-xl hover:cursor-pointer hover:text-violet-300"
-            id="todayBtn"
+            id="today-btn"
           >
             Today
           </div>
           <div
             class="font-bold text-violet-500 text-xl hover:cursor-pointer hover:text-violet-300"
-            id="upcomingBtn"
+            id="upcoming-btn"
           >
             Upcoming
           </div>
@@ -65,7 +65,7 @@
 
       <!-- Modal Project -->
       <div
-        id="new-project-modal"
+        id="project-modal"
         class="hidden fixed z-[1] left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.4)]"
       >
         <div
@@ -76,12 +76,12 @@
             <h1 class="text-xl font-bold">Project name:</h1>
             <input
               type="text"
-              id="projectInput"
+              id="project-name-input"
               class="border-gray-300 border p-2 w-[80%] rounded-md focus:bg-gray-100 focus:border-gray-200 outline-none"
               placeholder="e.g. shoping list, fitness routine, etc."
             />
             <button
-              id="submitProject"
+              id="submit-project-btn"
               class="border-gray-300 border w-[20%] p-2 rounded-md hover:bg-green-600 hover:border-green-600 hover:text-white"
             >
               Submit
@@ -92,7 +92,7 @@
 
       <!-- Modal Todo -->
       <div
-        id="new-todo-modal"
+        id="todo-modal"
         class="hidden fixed z-[1] left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.4)]"
       >
         <div
@@ -102,13 +102,17 @@
             <h1 class="text-xl font-bold">To do:</h1>
             <input
               type="text"
-              id="todoInput"
+              id="todo-name-input"
               class="border-gray-300 border p-2 w-[80%] rounded-md focus:bg-gray-100 focus:border-gray-200 outline-none"
               placeholder="e.g. buy groceries, read a book etc."
             />
-            <input type="date" id="dateInput" class="w-[20%] outline-none" />
+            <input
+              type="date"
+              id="todo-date-input"
+              class="w-[20%] outline-none"
+            />
             <button
-              id="submitTodo"
+              id="submit-todo-btn"
               class="border-gray-300 border w-[20%] p-2 rounded-md hover:bg-green-600 hover:border-green-600 hover:text-white"
             >
               Submit

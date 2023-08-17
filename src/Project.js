@@ -1,5 +1,5 @@
 import Todo from "./Todo";
-import { isValid, isPast, isToday, toDate } from "date-fns";
+import { isPast, isToday } from "date-fns";
 
 export default class Project {
   constructor(name) {
@@ -31,15 +31,15 @@ export default class Project {
 
   getTodayTodos() {
     return this.todos.filter((todo) => {
-      const todoDate = toDate(todo.getDate());
+      const todoDate = new Date(todo.getDate());
       return isToday(todoDate);
     });
   }
 
   getUpcomingTodos() {
     return this.todos.filter((todo) => {
-      const todoDate = toDate(todo.getDate());
-      return isValid(todoDate) && !(isPast(todoDate) || isToday(todoDate));
+      const todoDate = new Date(todo.getDate());
+      return !(isPast(todoDate) || isToday(todoDate));
     });
   }
 }

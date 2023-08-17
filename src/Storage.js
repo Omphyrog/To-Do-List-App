@@ -30,15 +30,29 @@ export default class Storage {
     return todoApp;
   }
 
-  static addProject(project) {
+  static addProject(projectName) {
     const todoApp = Storage.getTodoApp();
-    todoApp.addProject(project);
+    todoApp.addProject(projectName);
     Storage.saveTodoApp(todoApp);
   }
 
   static removeProject(projectName) {
     const todoApp = Storage.getTodoApp();
     todoApp.removeProject(projectName);
+    Storage.saveTodoApp(todoApp);
+  }
+
+  static addTodo(projectName, todoName, todoDate) {
+    const todoApp = Storage.getTodoApp();
+    const project = todoApp.getProject(projectName);
+    project.addTodo(todoName, todoDate);
+    Storage.saveTodoApp(todoApp);
+  }
+
+  static removeTodo(projectName, todoName) {
+    const todoApp = Storage.getTodoApp();
+    const project = todoApp.getProject(projectName);
+    project.removeTodo(todoName);
     Storage.saveTodoApp(todoApp);
   }
 }
